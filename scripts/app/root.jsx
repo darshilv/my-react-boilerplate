@@ -18,7 +18,7 @@ module.exports = React.createClass({
         <h1>Hello, Darshil from App.</h1>
         <section className="appContent">
           <TransitionGroup transitionName="example" transitionEnter={true} transitionLeave={false}>
-            <RouteHandler key={this.getActiveRoute()} />
+            <RouteHandler />
           </TransitionGroup>
         </section>
       </div>
