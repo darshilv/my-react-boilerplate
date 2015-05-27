@@ -13,9 +13,10 @@ var Home = require('./app/pages/Home');
 require('./scss/_boot.scss');
 
 var routes = (
-  <Route handler={App} path="/" >
+  <Route handler={App}>
     <DefaultRoute handler={Home} />
     <NotFoundRoute handler={NotFound} />
+    <Route name="home" path="/" handler={Home} />
     <Route name="projects" path="/projects" handler={Projects} >
       <Route name="project" path="/project/:projectId" handler={Project} />
       <NotFoundRoute handler={ProjectNotFound} />
