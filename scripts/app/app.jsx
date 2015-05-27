@@ -1,17 +1,27 @@
 'use strict';
 
 var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
-var DefualtRoute = Router.DefualtRoute;
-var NotFoundRoute = Router.NotFoundRoute;
+var Reflux = require('reflux');
+var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 
-var App = React.createClass({
-  render() {
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+
+module.exports = React.createClass({
+  getActiveRoute () {
+    return this.getRoutes().reverse()[0].name;
+  },
+
+  render : function() {
     return (
-      <h1>Hello, Darshil.</h1>
+      <div>
+        <h1>Hello, Darshil from App.</h1>
+        <section className="appContent">
+          <TransitionGroup transitionName="example" transitionEnter={true} transitionLeave={false}>
+            <RouteHandler key={this.getActiveRoute()} />
+          </TransitionGroup>
+        </section>
+      </div>
     );
   }
 });
-
-module.exports = App;
