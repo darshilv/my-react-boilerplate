@@ -7,7 +7,7 @@ var Route = Router.Route;
 var DefualtRoute = Router.DefualtRoute;
 var NotFoundRoute = Router.NotFoundRoute;
 
-var App = require('./app/app');
+var App = require('./app/root');
 var Home = require('./app/pages/Home');
 
 require('./scss/_boot.scss');
